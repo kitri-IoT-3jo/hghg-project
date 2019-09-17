@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <!-- Theme CSS - Includes Bootstrap -->
+    <link href="css/creative.css" rel="stylesheet">
+    <style type="text/css">
+    	.table td,th {text-align: center; border: 1px solid lightgray;}
+		.page-link{color: #ff6633;}
+        .dropdown{margin-bottom: 10px;}
+        #board_title{margin-top:50px; margin-bottom: 20px;}
+        #region{background-color: white; color: black;}
+        #write{float: right; margin-right: 10px;}
+        .pagination{margin-top: 30px; padding-left: 100px;}
+        .search{position: relative; left: 34%;}
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">
+            <img src="./img/restaurant.svg" alt="fork img">  한끼함께
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#about">로그인</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="board.html">커뮤니티</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 align="center" id="board_title">같이 먹어요</h1>
+    </div>
+    <div class="dropdown" align="right">
+        <button type="button" id="region" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            서울시 동작구
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">서울시 구로구</a>
+            <a class="dropdown-item" href="#">서울시 강남구</a>
+            <a class="dropdown-item" href="#">서울시 노진구</a>
+        </div>
+    </div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th width="100">번호</th>
+                    <th>제목</th>
+                    <th width="200">글쓴이</th>
+                    <th width="100">날짜</th>
+                    <th width="100">조회수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>3</td>
+                    <td>치킨드실분</td>
+                    <td>컨츄리꼬꼬</td>
+                    <td>9/25</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>순댓국ㄱ</td>
+                    <td>국밥충</td>
+                    <td>9/23</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>오치?오피?</td>
+                    <td>야식냠냠</td>
+                    <td>9/22</td>
+                    <td>7</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+ <p>
+
+<button type="button" id="write" class="btn btn-warning"><a href="board_new.html">글쓰기</a></button>
+<ul class="pagination justify-content-center">
+    <li class="page-item"><a class="page-link" href="javascript:void(0);">< 이전</a></li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0);">다음 ></a></li>
+</ul>
+</p>
+<form method="GET">
+    <div class="search">
+        <select id="search_type" name="search_type">
+            <option value="search_all">전체</option>
+            <option value="search_subject">제목</option>
+            <option value="search_memo">내용</option>
+            <option value="search_name">글쓴이</option>
+            <option value="search_subject_memo">제목+내용</option>
+        </select>
+        <input type="search" name="search_contents">
+        <button type="button" class="btn btn-dark">검색</button>
+    </div>
+</form>
+</body>
+
+</html>
