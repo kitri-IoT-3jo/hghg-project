@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>details</title>
+	<style type="text/css">
+		h4, ul {margin: 0;}
+		div.hghg {
+			background: #ffd191;
+			border-radius: 5px;
+			width: 700px;
+			margin: auto;
+			overflow: hidden;
+		}
+		div.leftcards {
+			width: 80%;
+			float: left;
+		}
+		div.rightcards {
+			width: 20%;
+			float: left;
+		}
+		div.card {
+			padding: 10px;
+			margin-bottom: 10px;
+			overflow: hidden;
+		}
+
+		div.member {
+			overflow: hidden;
+			width: 160px;
+			margin: 5px;
+			float: left;
+		}
+		div.member > * {
+			height: 40px;
+			float: left;
+			vertical-align: middle;
+			padding: 5px;
+		}
+		h4.member_name {
+			height: 20px;
+			margin-top: 10px;
+		}
+
+		#alarm_time {
+			float: right;
+		}
+		#alarm_img {
+			height: 21px;
+			float: right;
+			margin-right: 20px;
+		}
+
+		input[type="button"] {
+			border-radius: 3px;
+			margin: 10px 0px 0px 0px;
+			border: 1px solid white;
+			background: #f0f0f0;
+			width: 70px;
+		}
+		input[type="button"]:hover {
+			background: #ffa161;
+			border: 1px solid #f47131;
+			font-weight: bold;
+		}
+		#chat_img {
+			height: 30px;
+			padding: 20px 0px 0px 35px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var idnum = 1;
+			document.getElementById("join").onclick = function(){
+				var div = document.createElement("div");
+				div.setAttribute("id", "user_id"+(idnum++));
+				div.setAttribute("class", "member");
+
+				var img1 = document.createElement("img");
+				img1.setAttribute("src", "../img/host.png");
+
+				var img2 = document.createElement("img");
+				img2.setAttribute("src", "../img/profile.png");
+
+				var h4 = document.createElement("h4");
+				h4.setAttribute("class", "member_name");
+				h4.innerText = "이름";
+
+				div.appendChild(img1);
+				div.appendChild(img2);
+				div.appendChild(h4);
+
+				document.getElementById("member_main").appendChild(div);
+			}
+			document.getElementById("exit").onclick = function(){
+				if(idnum == 1) return;
+				var divID = "user_id"+(--idnum);
+				var div = document.getElementById(divID);
+				document.getElementById("member_main").removeChild(div);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="hghg">
+		<div class="leftcards">
+			<div class="card">
+				<h4>(4/6) 같이 먹어요!</h4>
+			</div>
+			<div class="card" id="member_main">
+				<div class="member">
+					<img src="../img/host.png">
+					<img src="../img/profile.png">
+					<h4 class="member_name">이상진</h4>
+				</div>
+				<div class="member">
+					<img src="../img/host.png">
+					<img src="../img/profile.png">
+					<h4 class="member_name">이상진</h4>
+				</div>
+				<div class="member">
+					<img src="../img/host.png">
+					<img src="../img/profile.png">
+					<h4 class="member_name">이상진</h4>
+				</div>
+				<div class="member">
+					<img src="../img/host.png">
+					<img src="../img/profile.png">
+					<h4 class="member_name">이상진</h4>
+				</div>
+			</div>
+		</div>
+		<div class="rightcards">
+			<div class="card">
+				<h4 id="alarm_time">pm 01:30</h4>
+				<img src="../img/alarm.png" id="alarm_img">
+			</div>
+			<div class="card buttons">
+				<ul type="none">
+					<li><input type="button" id="join" value="참가하기"></li>
+					<li><input type="button" id="exit" value="나가기"></li>
+					<li><img src="../img/chat.png" id=chat_img></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
